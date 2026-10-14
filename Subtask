@@ -1,0 +1,18 @@
+package trecker.v2;
+
+public class Subtask extends Task {
+    private int epicId; 
+    
+     public Subtask( String name, String description, TaskStatus status, int epic ) {
+        super(name, description, status);
+        this.epicId = epic;
+    }
+    
+     public int getEpicId(){
+         return this.epicId;
+     }
+            
+    public void setEpicId(int epicId){
+        this.epicId = epicId;
+    }
+}
