@@ -1,34 +1,31 @@
-package trecker.v2;
-import trecker.v1.*;
+package trecker.v2_2;
 import java.util.ArrayList;
-
 public class Epic extends Task {
-    
-    private ArrayList<Integer> subtaskIds = new ArrayList<>();; // Списка идентификаторов подзадач// Списка идентификаторов подзадач
+    private ArrayList<Integer> subtaskIds ; 
     
     public Epic(String name, String description, TaskStatus status) {
        super(name, description, status);
-       this.subtaskIds = new ArrayList<>();
+      this.subtaskIds = new ArrayList<>();
     }
-  
-    public void setSubtaskIds(ArrayList<Integer> subtaskIds) {
-        this.subtaskIds = subtaskIds;
+    
+     public Epic(String name, String description, TaskStatus status, ArrayList<Integer> arr) {
+       super(name, description, status);
+      this.subtaskIds = arr;
+    }
+    
+    public Epic(String name, String description ) {
+        super(name, description);
+         this.subtaskIds = new ArrayList<>();
+       
+    }
+    
+    public Epic(String name, String description, ArrayList<Integer> subtaskIds ) {
+        super(name, description);
+         this.subtaskIds =subtaskIds ;
+       
     }
 
-   
     public ArrayList<Integer> getAllIdsSubsTaksOfEpic(){
         return subtaskIds;
-    }
-    
-    public void  addSubtaskId(Integer id){
-            subtaskIds.add(id);
-    }
-    public void  removeSubtaskId(Integer id){
-            subtaskIds.remove(id);
-    }
-    
-     public void  clearSubtaskIds(){
-            subtaskIds.clear();
-    }
-   
+    }  
 }
