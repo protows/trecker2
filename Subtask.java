@@ -1,5 +1,4 @@
-package trecker.v2;
-
+package trecker.v2_2;
 public class Subtask extends Task {
     private int epicId; 
     
@@ -7,12 +6,14 @@ public class Subtask extends Task {
         super(name, description, status);
         this.epicId = epic;
     }
+         
+    public Subtask(String name, String description, int epic) {
+        super(name, description);
+        this.epicId = epic;
+    }
     
      public int getEpicId(){
          return this.epicId;
      }
             
-    public void setEpicId(int epicId){
-        this.epicId = epicId;
-    }
 }
