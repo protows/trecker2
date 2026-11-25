@@ -1,10 +1,16 @@
-package trecker.v2;
+package trecker.v2_2;
 public class Task {
+
+    @Override
+    public String toString() {
+        return "Task{" + "name=" + name + ", description=" + description + ", taskid=" + taskid + ", status=" + status + '}';
+    }
     private String name;
     private String description;
     private int taskid;
     private TaskStatus status;
-    
+ 
+ 
     public Task(String name, String description, TaskStatus status) {
         this.name = name;
         this.description = description;
@@ -16,13 +22,11 @@ public class Task {
         this.description = description;
         this.status = TaskStatus.NEW;
     }
-
+            
     public void setTaskid(int taskid) {
-        this.taskid = taskid;
-    }
-
-    public void setStatus(TaskStatus status) {
-        this.status = status;
+        if(taskid!=0){
+            this.taskid = taskid;
+        }  
     }
     
     public String getName() {
